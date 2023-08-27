@@ -8,11 +8,13 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import { Navigate, Link } from "react-router-dom";
 
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
+
 
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
@@ -44,7 +46,8 @@ const Topbar = () => {
           <SettingsOutlinedIcon />
         </IconButton>
         <IconButton>
-          <PersonOutlinedIcon />
+        <Link  to="/register"><PersonOutlinedIcon/></Link>
+          {/* <PersonOutlinedIcon onClick={()=> Navigate("/register")}/> */}
         </IconButton>
       </Box>
     </Box>
